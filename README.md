@@ -1,6 +1,6 @@
-# create-svelte
+# ematchi
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+ematchi game taken from the Frontend Masters Svelte course - https://frontendmasters.com/courses/svelte-v2.
 
 ## Creating a project
 
