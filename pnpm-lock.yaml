@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@fontsource/grandstander':
+        specifier: ^5.1.1
+        version: 5.1.1
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
@@ -173,6 +177,9 @@ packages:
   '@fastify/busboy@2.1.1':
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
+
+  '@fontsource/grandstander@5.1.1':
+    resolution: {integrity: sha512-p2VeMnMS29lAV+cGNhKMfgMszwjvAS08uHaATu/COj6TrDHWmM/EIeMsrv5sfe4GT3sF+3kJBhN3ktWW2aoDog==}
 
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
@@ -638,6 +645,8 @@ snapshots:
     optional: true
 
   '@fastify/busboy@2.1.1': {}
+
+  '@fontsource/grandstander@5.1.1': {}
 
   '@jridgewell/resolve-uri@3.1.2': {}
 
