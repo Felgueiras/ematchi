@@ -52,20 +52,19 @@
 		let remaining_at_start = remaining;
 
 		function loop() {
-			if (playing) return;
+			if (!playing) return;
 			requestAnimationFrame(loop);
 
 			remaining = remaining_at_start - (Date.now() - start);
 
 			if (remaining <= 0) {
-				// TODO the game has been lost
+				dispatch('lose');
 				playing = false;
 			}
 		}
 
 		loop();
 	}
-	onMount(countdown);
 </script>
 
 <div class="game" style="--size: {size}">
@@ -75,7 +74,8 @@
 				{remaining}
 				{duration}
 				on:click={() => {
-					// TODO pause the game
+					playing = false;
+					dispatch('pause');
 				}}
 			/>
 		{/if}
@@ -86,7 +86,7 @@
 			on:found={(e) => {
 				found = [...found, e.detail.emoji];
 				if (found.length === (size * size) / 2) {
-					// TODO win the game
+					dispatch('win');
 				}
 			}}
 			{found}
