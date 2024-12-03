@@ -25,6 +25,7 @@
 	"type": "module",
 	"packageManager": "pnpm@9.0.1+sha1.0e0a9c2d140ddf9aab730067eb7bcfb9e18bdee7",
 	"dependencies": {
-		"@fontsource/grandstander": "^5.1.1"
+		"@fontsource/grandstander": "^5.1.1",
+		"@neoconfetti/svelte": "^2.2.1"
 	}
 }
