@@ -52,8 +52,17 @@
 
 		<div class="buttons">
 			{#if state === 'paused'}
-				<button>resume</button>
-				<button>quit</button>
+				<button
+					on:click={() => {
+						game.resume();
+						state = 'playing';
+					}}>resume</button
+				>
+				<button
+					on:click={() => {
+						state = 'waiting';
+					}}>quit</button
+				>
 			{:else}
 				{#each levels as level}
 					<button
@@ -87,5 +96,22 @@
 		left: 50%;
 		top: 30%;
 		pointer-events: none;
+	}
+
+	.buttons {
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+		align-items: center;
+		justify-content: center;
+		margin-top: 2em;
+	}
+
+	.buttons button {
+		margin: 0;
+		padding: 0.75em 2em;
+		font-size: 1.25em;
+		cursor: pointer;
+		border-radius: 2em;
 	}
 </style>
