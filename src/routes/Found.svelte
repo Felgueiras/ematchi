@@ -28,15 +28,15 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 4em;
-		height: 4em;
+		width: 5em;
+		height: 5em;
 		background: white;
-		padding: 1em;
+		padding: 1.25em;
 		border-radius: 50%;
 	}
 	img {
 		position: absolute;
-		width: 2em;
-		height: 2em;
+		width: 2.5em;
+		height: 2.5em;
 	}
 </style>
