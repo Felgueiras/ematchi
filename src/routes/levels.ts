@@ -8,7 +8,7 @@ export interface Level {
 export const levels: Level[] = [
 	{
 		label: 'noob',
-		size: 3,
+		size: 2,
 		duration: 30 * 1000,
 		emojis: '😀 😃 😄'.split(' ')
 	},
