@@ -3,8 +3,8 @@ import tsParser from '@typescript-eslint/parser';
 
 export default [
 	{
-		files: ['**/*.ts', '**/*.js'],
-		ignores: ['node_modules/', 'build/', 'dist/', 'static/', '.svelte-kit/', '*.css'],
+		files: ['**/*.js', '**/*.ts'],
+		ignores: ['node_modules/', 'build/', 'dist/', 'static/', '.svelte-kit/**', '*.css'],
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: {
