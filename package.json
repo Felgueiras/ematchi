@@ -38,9 +38,9 @@
 		"@neoconfetti/svelte": "^2.2.1"
 	},
 	"lint-staged": {
-		"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,astro,svelte}": [
-			"oxlint .",
-			"prettier --write"
+		"**/*.{ts,tsx}": [
+			"prettier --write",
+			"eslint --max-warnings 0 ."
 		]
 	}
 }
