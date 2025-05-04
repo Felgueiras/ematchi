@@ -5,6 +5,8 @@ export interface Level {
 	emojis: string[];
 }
 
+const abc = 'abcdefghijklmnopqrstuvwxyz';
+
 export const levels: Level[] = [
 	{
 		label: 'noob',
