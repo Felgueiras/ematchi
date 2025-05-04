@@ -39,4 +39,10 @@
 			"oxlint --max-warnings 0 ."
 		]
 	}
+  ,
+  "pnpm": {
+	"overrides": {
+	  "cookie": ">=0.7.0"
+	}
+  }
 }
