@@ -5,7 +5,7 @@ export interface Level {
 	emojis: string[];
 }
 
-const abc = 'abcdefghijklmnopqrstuvwxyz';
+const abcd = 'abcdefghijklmnopqrstuvwxyz';
 
 export const levels: Level[] = [
 	{
