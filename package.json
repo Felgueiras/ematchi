@@ -8,7 +8,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint . --config eslint.config.js && prettier --plugin-search-dir . --check .",
+		"lint": "oxlint . && prettier --plugin-search-dir . --check .",
 		"oxlint": "oxlint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"prepare": "husky"
@@ -16,10 +16,6 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
-		"@typescript-eslint/eslint-plugin": "^8.31.1",
-		"@typescript-eslint/parser": "^8.31.1",
-		"eslint": "^9.26.0",
-		"eslint-plugin-svelte": "^3.5.1",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.5.1",
 		"oxlint": "^0.16.9",
