@@ -49,3 +49,30 @@ export const levels: Level[] = [
 			)
 	}
 ];
+
+export function saveCustomLevel(level: Level) {
+	const customLevels = listCustomLevels();
+	const existingIndex = customLevels.findIndex(l => l.label === level.label);
+	if (existingIndex !== -1) {
+		customLevels[existingIndex] = level;
+	} else {
+		customLevels.push(level);
+	}
+	localStorage.setItem('customLevels', JSON.stringify(customLevels));
+}
+
+export function listCustomLevels(): Level[] {
+	const customLevels = localStorage.getItem('customLevels');
+	return customLevels ? JSON.parse(customLevels) : [];
+}
+
+export function deleteCustomLevel(label: string) {
+	const customLevels = listCustomLevels();
+	const updatedLevels = customLevels.filter(level => level.label !== label);
+	localStorage.setItem('customLevels', JSON.stringify(updatedLevels));
+}
+
+export function getCustomLevel(label: string): Level | null {
+	const customLevels = listCustomLevels();
+	return customLevels.find(level => level.label === label) || null;
+}
