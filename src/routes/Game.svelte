@@ -3,7 +3,7 @@
 	import Countdown from './Countdown.svelte';
 	import Found from './Found.svelte';
 	import Grid from './Grid.svelte';
-	import { type Level, levels } from './levels';
+	import { type Level, levels, getCustomLevel } from './levels';
 	import { shuffle } from './utils';
 
 	const dispatch = createEventDispatcher();
@@ -27,6 +27,15 @@
 		playing = true;
 		countdown();
 		dispatch('play');
+	}
+
+	export function startCustomLevel(label: string) {
+		const level = getCustomLevel(label);
+		if (level) {
+			start(level);
+		} else {
+			console.error('Custom level not found');
+		}
 	}
 
 	function create_grid(level: Level) {

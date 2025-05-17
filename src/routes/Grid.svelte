@@ -10,34 +10,37 @@
 	let a: number = -1;
 	let b: number = -1;
 	let reset_timeout: number;
+
+	function isValidGrid(grid: string[], size: number): boolean {
+		const uniqueEmojis = new Set(grid);
+		return uniqueEmojis.size === (size * size) / 2;
+	}
+
+	function handleSquareClick(i: number, emoji: string) {
+		clearTimeout(reset_timeout);
+		if (a === -1 && b === -1) {
+			a = i;
+		} else if (b === -1) {
+			b = i;
+			if (grid[a] === grid[b]) {
+				dispatch('found', { emoji });
+			} else {
+				reset_timeout = setTimeout(() => {
+					a = b = -1;
+				}, 1000);
+			}
+		} else {
+			b = -1;
+			a = i;
+		}
+	}
 </script>
 
 <div class="grid">
 	{#each grid as emoji, i}
 		<Square
 			{emoji}
-			on:click={() => {
-				clearTimeout(reset_timeout);
-				if (a === -1 && b === -1) {
-					a = i;
-				} else if (b === -1) {
-					b = i;
-					if (grid[a] === grid[b]) {
-						// correct
-						dispatch('found', {
-							emoji
-						});
-					} else {
-						// incorrect
-						reset_timeout = setTimeout(() => {
-							a = b = -1;
-						}, 1000);
-					}
-				} else {
-					b = -1;
-					a = i;
-				}
-			}}
+			on:click={() => handleSquareClick(i, emoji)}
 			selected={a === i || b === i}
 			found={found.includes(emoji)}
 			group={grid.indexOf(emoji) === i ? 'a' : 'b'}

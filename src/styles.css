@@ -16,3 +16,178 @@ body {
 h1 {
 	font-family: Grandstander;
 }
+
+.editor {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 1em;
+	background: #f9f9f9;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+	margin-bottom: 1em;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5em;
+	font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+	width: 100%;
+	padding: 0.5em;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.emoji-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin-top: 0.5em;
+}
+
+.emoji {
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+button {
+	padding: 0.5em 1em;
+	border: none;
+	border-radius: 4px;
+	background: #007bff;
+	color: white;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #0056b3;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em 0;
+	border-bottom: 1px solid #ccc;
+}
+
+li button {
+	margin-left: 0.5em;
+	background: #dc3545;
+}
+
+li button:hover {
+	background: #c82333;
+}
+
+.modal-background {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(10px);
+	display: grid;
+	place-items: center;
+	z-index: 999;
+	background: lightgrey;
+}
+
+/* Scoped styles for the editor page */
+.editor-page .editor {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 1em;
+	background: #f9f9f9;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.editor-page .form-group {
+	margin-bottom: 1em;
+}
+
+.editor-page label {
+	display: block;
+	margin-bottom: 0.5em;
+	font-weight: bold;
+}
+
+.editor-page input[type="text"],
+.editor-page input[type="number"] {
+	width: 100%;
+	padding: 0.5em;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.editor-page .emoji-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin-top: 0.5em;
+}
+
+.editor-page .emoji {
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+.editor-page button {
+	padding: 0.5em 1em;
+	border: none;
+	border-radius: 4px;
+	background: #007bff;
+	color: white;
+	cursor: pointer;
+}
+
+.editor-page button:hover {
+	background: #0056b3;
+}
+
+.editor-page ul {
+	list-style: none;
+	padding: 0;
+}
+
+.editor-page li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.editor-page li button {
+	margin-left: 0.5em;
+	background: #dc3545;
+}
+
+.editor-page li button:hover {
+	background: #c82333;
+}
+
+.editor-page .modal-background {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(10px);
+	display: grid;
+	place-items: center;
+	z-index: 999;
+	background: lightgrey;
+}
