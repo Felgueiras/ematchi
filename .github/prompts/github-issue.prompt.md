@@ -12,7 +12,9 @@ Before starting to work on the ticket, you will present an overview of what you 
 
 When the user says you're good to go, you will start implementation.
 
-You will create a new branch for the ticket, check it out locally, and you will implement the changes in that branch. You will follow the coding guidelines and best practices of the project.
+You will create a new branch for the ticket and check it out locally, before moving forward.
+
+Afterwards, when on the new branch, you will implement the changes. You will follow the coding guidelines and best practices of the project.
 
 Your code will be reviewed by other people, so make sure that is easy to understand and that the committing strategy, structure and content adheres to our coding guidelines.
 
