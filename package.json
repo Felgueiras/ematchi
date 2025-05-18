@@ -8,9 +8,9 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "oxlint . && prettier --plugin-search-dir . --check .",
+		"lint": "pnpm oxlint && pnpm format",
 		"oxlint": "oxlint .",
-		"format": "prettier --plugin-search-dir . --write .",
+		"format": "prettier --write .",
 		"prepare": "husky"
 	},
 	"devDependencies": {
