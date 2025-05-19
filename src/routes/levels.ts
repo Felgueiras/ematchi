@@ -5,7 +5,7 @@ export interface Level {
 	emojis: string[];
 }
 
-export const levels: Level[] = [
+export const predefinedLevels: Level[] = [
 	{
 		label: 'noob',
 		size: 3,
@@ -49,3 +49,26 @@ export const levels: Level[] = [
 			)
 	}
 ];
+
+// Function to load custom levels from localStorage
+function loadCustomLevels(): Level[] {
+	if (typeof localStorage !== 'undefined') {
+		try {
+			const customLevelsJson = localStorage.getItem('customLevels');
+			if (customLevelsJson) {
+				return JSON.parse(customLevelsJson);
+			}
+		} catch (e) {
+			console.error('Error loading custom levels', e);
+		}
+	}
+	return [];
+}
+
+// Function to get all levels (predefined + custom)
+export function getAllLevels(): Level[] {
+	return [...predefinedLevels, ...loadCustomLevels()];
+}
+
+// Export levels for backward compatibility
+export const levels = predefinedLevels;
