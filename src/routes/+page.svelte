@@ -3,11 +3,44 @@
 	import '../styles.css';
 	import Modal from './Modal.svelte';
 	import { levels } from './levels';
+	import { getCustomLevels } from './customLevels';
 	import { confetti } from '@neoconfetti/svelte';
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	let state: 'waiting' | 'playing' | 'paused' | 'won' | 'lost' = 'waiting';
-
+	let customLevels: any[] = [];
 	let game: Game;
+
+	onMount(() => {
+		// Check if there's a level to play from the editor
+		const levelToPlay = localStorage.getItem('levelToPlay');
+		if (levelToPlay) {
+			try {
+				const level = JSON.parse(levelToPlay);
+				localStorage.removeItem('levelToPlay');
+				game.start(level);
+			} catch (error) {
+				console.error('Error loading level to play:', error);
+			}
+		}
+
+		// Load custom levels initially and refresh when state changes
+		loadCustomLevels();
+	});
+
+	// Reload custom levels when waiting state is reached
+	$: if (state === 'waiting') {
+		loadCustomLevels();
+	}
+
+	function loadCustomLevels() {
+		customLevels = getCustomLevels();
+	}
+
+	function openEditor() {
+		goto('/editor');
+	}
 </script>
 
 <Game
@@ -71,6 +104,15 @@
 						}}>{level.label}</button
 					>
 				{/each}
+				{#each customLevels as level}
+					<button
+						class="custom-level"
+						on:click={() => {
+							game.start(level);
+						}}>{level.label}</button
+					>
+				{/each}
+				<button on:click={openEditor} class="editor-button">Level Editor</button>
 			{/if}
 		</div>
 	</Modal>
@@ -113,5 +155,15 @@
 		font-size: 1.25em;
 		cursor: pointer;
 		border-radius: 2em;
+	}
+
+	.custom-level {
+		background: #059669 !important;
+		color: white !important;
+	}
+
+	.editor-button {
+		background: #6b46c1 !important;
+		color: white !important;
 	}
 </style>
